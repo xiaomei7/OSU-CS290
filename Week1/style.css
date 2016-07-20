@@ -1,0 +1,30 @@
+table{
+    border-style:solid;
+    border-color: black;
+}
+th, tr, td{
+    border-style:solid;
+    border-color: grey;
+}
+
+tbody>tr:nth-of-type(even) {
+    background-color: #ccffff;
+}
+
+tbody>tr:nth-of-type(odd) {
+    background-color: #ffe6ff;
+}
+
+
+.outer-content {
+    background-color: pink;
+    width: 75%;
+    margin-top: 20px;
+}
+
+.inner-content {
+    background-color: blue;
+    width: 75%;
+    margin: auto;
+    vertical-aglin: center;
+}

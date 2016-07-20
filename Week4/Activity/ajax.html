@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CS290: Ajax Assignment</title>
+  </head>
+  <body>
+
+    <form>
+        <fieldset>
+            <legend>FormI: Open Weather Map.</legend>
+            <label for="city">City: </label>
+            <input type="text" name="q" id="city"> 
+            <input type="submit" id="citySubmit">
+            </br>
+            </br>
+            <label for="zip">Zip Code: </label>
+            <input type="text" name="zip" id="zip">
+            <input type="submit" id="zipSubmit">
+        </fieldset>
+    </form>
+
+    <div>
+        <p>City: <span id="cityChosen"></span>
+        <p>Country: <span id="country"></span>
+        <p>Temperature: <span id="temp"></span></p>
+        <p>Pressure: <span id="pressure"></span></p>
+        <p>Humidity: <span id="humidity"></span></p>
+    </div>
+
+    </br>
+    </br>
+
+    <form>
+        <fieldset>
+            <legend>Form II: Say Something to Us.</legend>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name"> 
+            </br>
+            </br>
+            <label for="word">What you want to say: </label>
+            <input type="text" name="word" id="word">
+            </br>
+            </br>
+            <input type="submit" id="wordSubmit">
+        </fieldset>
+    </form>
+
+    <div>
+        <p>My name is: <span id="inputName"></span></p>
+        <p>And I want to say: <span id="inputWords"></span></p>
+    </div>
+
+    <script src="ajax.js"></script>
+
+  </body>
+</html>
