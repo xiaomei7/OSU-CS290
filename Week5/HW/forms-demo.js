@@ -15,12 +15,6 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
-app.get('/show-data',function(req,res){
-  var context = {};
-  context.sentData = req.query.myData;
-  res.render('show-data', context);
-});
-
 app.get('/getData',function(req,res){
   var qParams = [];
   for (var p in req.query){
