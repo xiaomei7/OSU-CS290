@@ -1,11 +1,6 @@
-<h1>Week 5: HW</h1>
-<h2>The Home Page</h2>
-<h3>Here is what you can do:</h3>
-<p><strong>/getData</strong>?name=attributes</p>
-<div><p><strong>OR</strong></p></div>
-<p>Use <em>Advanced REST Client</em> to Post data:</p>
-	<ol>
-		<li>Launch the App.</li>
-		<li>Enter http://52.35.2.29:3000/postData</li>
-		<li>Post your list.</li>
-	</ol>
+<h1>{{header}} Request Received</h1>
+<ul>
+  {{#each dataList}}
+    <li>{{this.name}}: {{this.value}}
+  {{/each}}
+</ul>
