@@ -13,8 +13,8 @@ app.set('port', 3000);
 
 app.get('/home', function(req,res){
   var qParams = [];
-  for(var key in req.query){
-    qParams.push({'name':key, 'value':req.query[key]});
+  for(var p in req.query){
+    qParams.push({'name':key, 'value':req.query[p]});
   }
   var context = {};
   context.header = 'GET';
