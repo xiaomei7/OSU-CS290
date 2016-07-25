@@ -11,26 +11,26 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
-app.get('/', function(req,res){
-  var urlParams = [];
+app.get('/home', function(req,res){
+  var qParams = [];
   for(var key in req.query){
-    urlParams.push({'name':key, 'value':req.query[key]});
+    qParams.push({'name':key, 'value':req.query[key]});
   }
   var context = {};
-  context.list = urlParams;
-  context.type = 'GET';
-  res.render('checker', context);
+  context.header = 'GET';
+  context.dataList = qParams;
+  res.render('home', context);
 });
 
-app.post('/', function(req,res){
-  var bodyParams = [];
+app.post('/home', function(req,res){
+  var qParams = [];
   for (var p in req.body){
-    bodyParams.push({'name':p,'value':req.body[p]})
+    qParams.push({'name':p,'value':req.body[p]})
   }
   var context = {};
-  context.list = bodyParams;
-  context.type = 'POST';
-  res.render('checker', context);
+  context.header = 'POST';
+  context.dataList = qParams;
+  res.render('home', context);
 });
 
 app.use(function(req,res){
