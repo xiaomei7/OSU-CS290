@@ -8,6 +8,10 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
+app.get('/', function(req,res){
+    res.render('home');
+});
+
 app.get('/reset-table',function(req,res,next){
   var context = {};
   pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
