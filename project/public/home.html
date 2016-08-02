@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<script src="database.js"></script>
+
+  <head>
+	<meta charset="utf-8">
+   <title>Workouts</title>
+  </head>
+
+<body onload="loaded()">
+
+  
+	<h1>Workouts</h1>
+	<p><b> Enter the information you would like to add.</b></p>
+  	<tr>
+        <td>Name:</td>
+        <td><input type="text" id="wname"></td>
+    </tr>
+    <tr>
+        <td>Reps:</td>
+        <td><input type="text" id="reps">
+	</tr>
+	 <tr>
+        <td>Weight:</td>
+        <td><input type="text" id="weight"></td> 
+    </tr>
+	 <tr>
+        <td>Date:</td>
+        <td><input type="text" id="date"></td>
+    </tr>
+	 <tr>
+        <td>Pounds:</td>
+        <td><input type="text" id="pounds"></td>
+        <input type="button" id="add" value="Add Information" onclick="add_button()"></td>
+    </tr>
+	<p><b> Enter the id of the row you would like to delete</b></p>
+	<td>ID:</td>
+	<td><input type="text" id="delete_id"></td>
+    <input type="button" id="delete" value="Delete Row" onclick="delete_button()"></td>
+	
+	<p><b>Enter the id of the row you would like to edit/update. Then fill in the following form accordingly.</b></p>
+	  	<tr>
+		<td>ID:</td>
+		<td><input type="text" id="eid"></td>
+        <td>Name:</td>
+        <td><input type="text" id="ename"></td>
+		<input type="button" id="uname" value="Update Name" onclick="updatename()"></td>
+    </tr>
+    <tr>
+        <td>Reps:</td>
+        <td><input type="text" id="ereps">
+		<input type="button" id="ureps" value="Update Reps" onclick="updatereps()"></td>
+	</tr>
+	 <tr>
+        <td>Weight:</td>
+        <td><input type="text" id="eweight"></td> 
+		<input type="button" id="uweight" value="Update Weight" onclick="updateweight()"></td>
+    </tr>
+	 <tr>
+        <td>Date:</td>
+        <td><input type="text" id="edate"></td>
+		<input type="button" id="udate" value="Update Date" onclick="updatedate()"></td>
+    </tr>
+	 <tr>
+        <td>Pounds:</td>
+        <td><input type="text" id="epounds"></td>
+        <input type="button" id="upounds" value="Update Pounds" onclick="updatepounds()"></td>
+    </tr>
+	<br>
+	<br>
+	<h2> Exercises </h2>
+</body>
+</html>
