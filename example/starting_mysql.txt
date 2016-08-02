@@ -1,7 +1,0 @@
-To install/run mysql on a local machine, do the following:
-
-1. Install:  sudo apt-get install mysql-server
-2. During installation be sure to set a password.
-3. After installation, to start it do:
-        mysql -u root -p
-4.  The above command will prompt for the password.
