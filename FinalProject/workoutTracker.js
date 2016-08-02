@@ -9,15 +9,7 @@ app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
 app.get('/',function(req,res,next){
-  var context = {};
-  pool.query('SELECT * FROM todo', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-    context.results = JSON.stringify(rows);
     res.render('home', context);
-  });
 });
 
 app.get('/reset-table',function(req,res,next){
