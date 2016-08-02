@@ -19,7 +19,7 @@ app.post('/delete', function(req,res) {
             next(err);
             return;
         }
-        pool.query('SELECT id,name,reps,weight,DATE_FORMAT(date, "%m-%d-%Y") AS date,lbs FROM workouts', function(err, rows, fields){
+    pool.query('SELECT id,name,reps,weight,DATE_FORMAT(date, "%m-%d-%Y") AS date,lbs FROM workouts', function(err, rows, fields){
             if(err){
                 next(err);
                 return;
