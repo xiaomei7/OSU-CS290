@@ -26,14 +26,14 @@ table {
 }
 
 fieldset { 
-	border:1px #66b3ff;
+	border:1px solid grey;
 }
 
 legend {
 
   padding: 0.2em 0.5em;
-  border:1px #66b3ff;
-  color: blue;
+  border:1px solid grey;
+  color: grey;
   font-size:90%;
   text-align: left;
 }
