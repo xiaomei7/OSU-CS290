@@ -126,7 +126,7 @@ function editRow(id)
 	name.setAttribute('id','newName');
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
-	fieldset.appendChild("</br>");
+	document.write("<br>");
 
 	
 	var reps = document.createElement("input");
