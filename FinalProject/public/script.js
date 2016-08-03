@@ -112,7 +112,7 @@ function deleteRow(id)
 function editRow(id)
 {
 
-	var linebreak = document.createElement("br");
+	var linebreak = document.createElement("/br");
 
 	var newForm = document.createElement("form"); 
 	newForm.setAttribute("id", "newForm" + id); 
@@ -120,14 +120,15 @@ function editRow(id)
 	var heading = document.createElement('h3'); // Heading of Form
 	heading.innerHTML = "Update your exercise: ";
 	newForm.appendChild(heading);
-	var fieldset = document.createElement("fieldset");
+
+	/*var fieldset = document.createElement("fieldset");
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update your exercise:");
 
 	
 
 	legend.appendChild(legendText);
-	fieldset.appendChild(legend);
+	fieldset.appendChild(legend);*/
 	
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
@@ -135,7 +136,6 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
 
-	var nameBreak = document.createElement('br');
 	newForm.appendChild(nameBreak);
 
 	var reps = document.createElement("input");
