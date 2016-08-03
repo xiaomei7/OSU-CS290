@@ -142,16 +142,18 @@ function editRow(id)
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
-	date.setAttribute('id','newDate'); //punny
+	date.setAttribute('id','newDate'); 
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 	
 	var unitsLBS = document.createElement("input");
 	unitsLBS.setAttribute('type','radio');
 	unitsLBS.setAttribute('name','newMeasure');
+
 	var unitsKilos = document.createElement("input");
 	unitsKilos.setAttribute('type','radio');
 	unitsKilos.setAttribute('name','newMeasure');
+
 	fieldset.appendChild(document.createTextNode("Units")); 
 	fieldset.appendChild(unitsLBS);
 	fieldset.appendChild(document.createTextNode("lbs"));
@@ -172,7 +174,7 @@ function editRow(id)
 
 	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
-	document.body.insertBefore(newForm, table);
+	document.body.insertAfter(newForm, table);
 
 }
 
