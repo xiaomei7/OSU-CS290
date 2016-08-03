@@ -121,23 +121,22 @@ function editRow(id)
 	heading.innerHTML = "Update your exercise: ";
 	newForm.appendChild(heading);
 
-	/*var fieldset = document.createElement("fieldset");
+	var fieldset = document.createElement("fieldset");
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update your exercise:");
 
 	
 
 	legend.appendChild(legendText);
-	fieldset.appendChild(legend);*/
+	fieldset.appendChild(legend);
 	
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
 	name.setAttribute('id','newName');
-	/*fieldset.appendChild(document.createTextNode("Name"));
-	fieldset.appendChild(name);*/
-	newForm.appendChild(name);
+	fieldset.appendChild(document.createTextNode("Name"));
+	fieldset.appendChild(name);
 
-	newForm.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
@@ -187,7 +186,7 @@ function editRow(id)
 	fieldset.appendChild(updateButton);
 
 
-	//newForm.appendChild(fieldset); 
+	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
 	document.body.insertBefore(newForm, table);
 
