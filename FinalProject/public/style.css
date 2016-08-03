@@ -37,3 +37,8 @@ legend {
   text-align: left;
 }
 
+.updateForm {
+	display: block;
+    margin: 1.0em auto;
+    text-align: center;
+}

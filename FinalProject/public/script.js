@@ -117,13 +117,14 @@ function editRow(id)
 
 	var newForm = document.createElement("form"); 
 	newForm.setAttribute("id", "newForm" + id);
-	newFrom.setAttribute("class", "updateForm");
+
 	
 	var heading = document.createElement('h3'); // Heading of Form
 	heading.innerHTML = "Update Form: ";
 	newForm.appendChild(heading);
 
 	var fieldset = document.createElement("fieldset");
+	fieldset.setAttribute("class", "updateForm");
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update your exercise:");
 
