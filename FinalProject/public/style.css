@@ -1,7 +1,7 @@
 table {
-	border: solid black;
+	border: solid grey;
 }
 
-td, tr, th {
-	border: dashed grey;
+button {
+	border: 1px solid grey;
 }

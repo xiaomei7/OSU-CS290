@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', callSelect);
-document.addEventListener('DOMContentLoaded', bindInsertButton);
+document.addEventListener('DOMContentLoaded', bindButton);
 
 function createTable(data)
 {
@@ -99,8 +99,8 @@ function deleteButton(id)
 function updateButton(id)
 {
 	
-	var upForm = document.createElement("form"); 
-	upForm.setAttribute("id", "upForm" + id); 
+	var newForm = document.createElement("form"); 
+	newForm.setAttribute("id", "newForm" + id); 
 	
 	
 	var fieldset = document.createElement("fieldset");
@@ -111,42 +111,42 @@ function updateButton(id)
 	
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
-	name.setAttribute('id','upName');
+	name.setAttribute('id','newName');
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
 
 	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
-	reps.setAttribute('id','upReps');
+	reps.setAttribute('id','newReps');
 	fieldset.appendChild(document.createTextNode("Reps")); 
 	fieldset.appendChild(reps);
 	
 	var weight = document.createElement("input");
 	weight.setAttribute('type','text');
-	weight.setAttribute('id','upWeight');
+	weight.setAttribute('id','newWeight');
 	fieldset.appendChild(document.createTextNode("Weight")); 
 	fieldset.appendChild(weight);
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
-	date.setAttribute('id','upDate'); //punny
+	date.setAttribute('id','newDate'); //punny
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 	
 	var unitsLBS = document.createElement("input");
 	unitsLBS.setAttribute('type','radio');
-	unitsLBS.setAttribute('name','upUnits');
+	unitsLBS.setAttribute('name','newMeasure');
 	var unitsKilos = document.createElement("input");
 	unitsKilos.setAttribute('type','radio');
-	unitsKilos.setAttribute('name','upUnits');
+	unitsKilos.setAttribute('name','newMeasure');
 	fieldset.appendChild(document.createTextNode("Units")); 
 	fieldset.appendChild(unitsLBS);
 	fieldset.appendChild(document.createTextNode("lbs"));
 	fieldset.appendChild(unitsKilos);
 	fieldset.appendChild(document.createTextNode("kilos"));	
 
-	//Create submit button************************************
+	
 	updateSubmitButton = document.createElement("button");
 	theText = document.createTextNode("update");
 	updateSubmitButton.appendChild(theText);
@@ -156,11 +156,11 @@ function updateButton(id)
 		event.preventDefault(); //Stop page from refreshing
 	}); //Reference the function that will do a get request to the update page
 	fieldset.appendChild(updateSubmitButton);
-	//*******************************************************
 
-	upForm.appendChild(fieldset); 
+
+	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
-	document.body.insertBefore(upForm, table);
+	document.body.insertBefore(newForm, table);
 	
 }
 
@@ -184,7 +184,7 @@ function callSelect()
 	req.send(); 
 }
 
-function bindInsertButton()
+function bindButton()
 {
 	document.getElementById('addExercise').addEventListener("click", function(event)
 	{
@@ -195,8 +195,15 @@ function bindInsertButton()
 		payload.weight = document.getElementById("weight").value;
 		payload.date = document.getElementById("date").value;
 		var radio = document.getElementsByName("measure");
-	        if(radio[0].checked) payload.measure = "1";
-	        else payload.measure = "0";
+
+	    if(radio[0].checked) 
+	    {
+	    		payload.measure = "1";
+	    }
+	    else
+	    {
+	        payload.measure = "0";
+	    }
 
 		var req = new XMLHttpRequest();
 		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
@@ -216,13 +223,20 @@ function updateGET(id)
 {
 	var payload = {};
 	payload.id = id;
-	payload.name = document.getElementById("upName").value;
-	payload.reps = document.getElementById("upReps").value;
-	payload.weight = document.getElementById("upWeight").value;
-	payload.date = document.getElementById("upDate").value;
-	var radio = document.getElementsByName("upUnits");
-        if(radio[0].checked) payload.units = "1";
-        else payload.units = "0";
+	payload.name = document.getElementById("newName").value;
+	payload.reps = document.getElementById("newReps").value;
+	payload.weight = document.getElementById("newWeight").value;
+	payload.date = document.getElementById("newDate").value;
+	var radio = document.getElementsByName("newMeasure");
+	
+    if(radio[0].checked)
+    {
+    	payload.units = "1";
+    }
+    else
+    {
+    	payload.units = "0";
+    }
 
 	var req = new XMLHttpRequest();
 	var requestString= "id=" + payload.id + "&name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
@@ -235,7 +249,7 @@ function updateGET(id)
 		
 		deleteTable(); 
 		callSelect(); 
-		document.body.removeChild(document.getElementById("upForm" + id));
+		document.body.removeChild(document.getElementById("newForm" + id));
 	});
 	req.send(); 
 	event.preventDefault(); 
