@@ -110,7 +110,6 @@ function deleteRow(id)
 function editRow(id)
 {
 
-
 	var linebreak = document.createElement('br');
 	var newForm = document.createElement("form"); 
 	newForm.setAttribute("id", "newForm" + id); 
@@ -128,14 +127,14 @@ function editRow(id)
 	name.setAttribute('id','newName');
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
-	newForm.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
 	reps.setAttribute('id','newReps');
 	fieldset.appendChild(document.createTextNode("Reps")); 
 	fieldset.appendChild(reps);
-	newForm.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 	
 	var weight = document.createElement("input");
 	weight.setAttribute('type','text');
@@ -156,14 +155,14 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("lbs"));
 	fieldset.appendChild(measureKgs);
 	fieldset.appendChild(document.createTextNode("kgs "));
-	newForm.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
 	date.setAttribute('id','newDate'); 
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
-	newForm.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 	
 	
 	updateButton = document.createElement("button");
