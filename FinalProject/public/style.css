@@ -5,6 +5,30 @@ table {
 button {
 	border: 1px solid grey;
 	text-align: center;
+	background: #a3bdcf;
+  background-image: -webkit-linear-gradient(top, #a3bdcf, #234052);
+  background-image: -moz-linear-gradient(top, #a3bdcf, #234052);
+  background-image: -ms-linear-gradient(top, #a3bdcf, #234052);
+  background-image: -o-linear-gradient(top, #a3bdcf, #234052);
+  background-image: linear-gradient(to bottom, #a3bdcf, #234052);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #1d3747;
+  background-image: -webkit-linear-gradient(top, #1d3747, #3498db);
+  background-image: -moz-linear-gradient(top, #1d3747, #3498db);
+  background-image: -ms-linear-gradient(top, #1d3747, #3498db);
+  background-image: -o-linear-gradient(top, #1d3747, #3498db);
+  background-image: linear-gradient(to bottom, #1d3747, #3498db);
+  text-decoration: none;
 }
 
 h1, h2, h3, p{
@@ -43,3 +67,5 @@ legend {
     margin: 1.0em auto;
     text-align: center;
 }
+
+
