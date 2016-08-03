@@ -126,7 +126,7 @@ function editRow(id)
 	var fieldset = document.createElement("fieldset");
 	fieldset.setAttribute("class", "updateForm");
 	var legend = document.createElement("legend");
-	var legendText = document.createTextNode("Update your exercise:");
+	var legendText = document.createTextNode("Enter What you want to change:");
 
 
 	legend.appendChild(legendText);
@@ -236,11 +236,11 @@ function bindButton()
 
 	    if(radioButton[0].checked) 
 	    {
-	    	dataInput.measure = 1;
+	    	dataInput.measure = "1";
 	    }
 	    else
 	    {
-	        dataInput.measure = 0;
+	        dataInput.measure = "0";
 	    }
 
 		var req = new XMLHttpRequest();
@@ -271,11 +271,11 @@ function updateTable(id)
 
     if(radio[0].checked)
     {
-    	dataInput.measure = 1;
+    	dataInput.measure = "1";
     }
     else
     {
-    	dataInput.measure = 0;
+    	dataInput.measure = "0";
     }
 
 	var req = new XMLHttpRequest();
