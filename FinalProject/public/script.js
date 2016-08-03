@@ -62,9 +62,9 @@ function createTable(data)
 		}(newButton.id);  
 		newRow.appendChild(newButton);
 		
-		// Update
+		// Edit
 		var upButton = document.createElement("button");
-		var upText = document.createTextNode("update");
+		var upText = document.createTextNode("edit");
 		upButton.appendChild(upText);
 
 		upButton.id = newRow.firstChild.textContent;
@@ -72,7 +72,7 @@ function createTable(data)
 		{
 			return function()
 			{
-				updateButton(x);
+				editButton(x);
 			};
 		}(upButton.id); 
 		newRow.appendChild(upButton);
@@ -96,7 +96,7 @@ function deleteButton(id)
 }
 
 
-function updateButton(id)
+function editButton(id)
 {
 	
 	var newForm = document.createElement("form"); 
@@ -228,7 +228,7 @@ function updateGET(id)
 	payload.weight = document.getElementById("newWeight").value;
 	payload.date = document.getElementById("newDate").value;
 	var radio = document.getElementsByName("newMeasure");
-	
+
     if(radio[0].checked)
     {
     	payload.units = "1";
