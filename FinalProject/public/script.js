@@ -147,10 +147,11 @@ function updateButton(id)
 	fieldset.appendChild(document.createTextNode("kilos"));	
 
 	//Create submit button************************************
-	updateSubmitButton = document.createElement("BUTTON");
-	theText = document.createTextNode("Update");
+	updateSubmitButton = document.createElement("button");
+	theText = document.createTextNode("update");
 	updateSubmitButton.appendChild(theText);
-	updateSubmitButton.addEventListener("click", function (event){
+	updateSubmitButton.addEventListener("click", function (event)
+	{
 		updateGET(id);
 		event.preventDefault(); //Stop page from refreshing
 	}); //Reference the function that will do a get request to the update page
