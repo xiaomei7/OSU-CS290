@@ -238,23 +238,14 @@ function bindButton()
             return;
         }
 
-        for (var i = 0; i < radios.length; i++) 
-        {
-            if (radios[i].checked) 
-            {
-                dataInput.measure = Number(radios[i].value);
-                break;
-            } 
-        }
-
-	    /*if(radioButton[0].checked) 
+	    if(radioButton[0].checked) 
 	    {
 	    	dataInput.measure = "1";
 	    }
 	    else
 	    {
 	        dataInput.measure = "0";
-	    }*/
+	    }
 
 		var req = new XMLHttpRequest();
 		var url= "http://52.35.2.29:3000/insert?name=" 
