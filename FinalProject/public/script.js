@@ -242,7 +242,7 @@ function bindButton()
         {
             if (radios[i].checked) 
             {
-                payload.units = Number(radios[i].value);
+                dataInput.measure = Number(radios[i].value);
                 break;
             } 
         }
