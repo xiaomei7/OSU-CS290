@@ -206,9 +206,11 @@ function bindButton()
 	    }
 
 		var req = new XMLHttpRequest();
-		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
+		var url= "http://52.35.2.29:3000/insert?name=" 
+		+ payload.name + "&reps=" + payload.reps + "&weight=" 
+		+ payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 		
-		req.open('GET', "http://52.35.2.29:3000/insert?" + requestString , true);
+		req.open('GET', url, true);
 		req.addEventListener('load',function()
 		{
 			deleteTable(); 
