@@ -128,48 +128,53 @@ function editRow(id)
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Enter What you want to change:");
 
-
 	legend.appendChild(legendText);
 	fieldset.appendChild(legend);
 	
 	var name = document.createElement("input");
-	name.setAttribute('type','text');
-	name.setAttribute('id','newName');
-	fieldset.appendChild(document.createTextNode("Name"));
+	name.setAttribute("type", "text");
+	name.setAttribute("id", "newName");
+	nameText =document.createTextNode("Name ");
+	fieldset.appendChild(nameText);
 	fieldset.appendChild(name);
 
 
 	var reps = document.createElement("input");
-	reps.setAttribute('type','text');
-	reps.setAttribute('id','newReps');
-	fieldset.appendChild(document.createTextNode("Reps")); 
+	reps.setAttribute("type", "text");
+	reps.setAttribute("id", "newReps");
+	repsText = document.createTextNode("Reps ");
+	fieldset.appendChild(repsText); 
 	fieldset.appendChild(reps);
 
 	
 	var weight = document.createElement("input");
 	weight.setAttribute('type','text');
 	weight.setAttribute('id','newWeight');
-	fieldset.appendChild(document.createTextNode("Weight")); 
+	weightText = document.createTextNode("Weight ");
+	fieldset.appendChild(weightText); 
 	fieldset.appendChild(weight);
 
 	var measureLbs = document.createElement("input");
 	measureLbs.setAttribute('type','radio');
 	measureLbs.setAttribute('name','newMeasure');
+	measreLbsText = document.createTextNode("lbs");
 
 	var measureKgs = document.createElement("input");
 	measureKgs.setAttribute('type','radio');
 	measureKgs.setAttribute('name','newMeasure');
+	measureKgsText = document.createTextNode("kgs  ");
 
 	fieldset.appendChild(measureLbs);
-	fieldset.appendChild(document.createTextNode("lbs"));
+	fieldset.appendChild(measreLbsText);
 	fieldset.appendChild(measureKgs);
-	fieldset.appendChild(document.createTextNode("kgs "));
+	fieldset.appendChild(measureKgsText);
 
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
 	date.setAttribute('id','newDate'); 
-	fieldset.appendChild(document.createTextNode("Date")); 
+	dateText = document.createTextNode("Date ");
+	fieldset.appendChild(dateText); 
 	fieldset.appendChild(date);
 
 	var line = document.createElement('hr'); // Giving Horizontal Row After Heading
