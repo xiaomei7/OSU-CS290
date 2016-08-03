@@ -107,10 +107,13 @@ function deleteRow(id)
 	event.preventDefault(); 
 };
 
+
+// reference: https://www.formget.com/javascript-contact-form/
 function editRow(id)
 {
 
-	var linebreak = document.createElement('br');
+	var linebreak = document.createElement("br");
+
 	var newForm = document.createElement("form"); 
 	newForm.setAttribute("id", "newForm" + id); 
 	
@@ -127,13 +130,16 @@ function editRow(id)
 	name.setAttribute('id','newName');
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
-	name.appendChild(linebreak);
+
+	var nameBreak = document.createElement('br');
+	newForm.appendChild(nameBreak);
 
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
 	reps.setAttribute('id','newReps');
 	fieldset.appendChild(document.createTextNode("Reps")); 
 	fieldset.appendChild(reps);
+
 	fieldset.appendChild(linebreak);
 	
 	var weight = document.createElement("input");
@@ -150,11 +156,11 @@ function editRow(id)
 	measureKgs.setAttribute('type','radio');
 	measureKgs.setAttribute('name','newMeasure');
 
-	//fieldset.appendChild(document.createTextNode("Units")); 
 	fieldset.appendChild(measureLbs);
 	fieldset.appendChild(document.createTextNode("lbs"));
 	fieldset.appendChild(measureKgs);
 	fieldset.appendChild(document.createTextNode("kgs "));
+
 	fieldset.appendChild(linebreak);
 	
 	var date = document.createElement("input");
@@ -162,9 +168,8 @@ function editRow(id)
 	date.setAttribute('id','newDate'); 
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
+
 	fieldset.appendChild(linebreak);
-	fieldset.appendChild(linebreak);
-	
 	
 	updateButton = document.createElement("button");
 	theText = document.createTextNode("update");
@@ -193,15 +198,16 @@ function deleteTable()
 function callSelect()
 {
 	var req = new XMLHttpRequest();
+	var url = "http://52.35.2.29:3000/select";
 
-	req.open('GET', "http://52.35.2.29:3000/select", true);
+	req.open('GET', url, true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function()
 	{
 		var response = JSON.parse(req.responseText); 
 		createTable(response); 
 	});
-	req.send(); 
+	req.send(null); 
 }
 
 function bindButton()
