@@ -20,7 +20,7 @@ app.get('/',function(req,res,next){
   res.render('home', context);
 });
 
-app.get('/select',function(req,res,next){
+app.get('/all',function(req,res,next){
   pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);

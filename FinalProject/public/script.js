@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', callSelect);
+document.addEventListener('DOMContentLoaded', selectTable);
 document.addEventListener('DOMContentLoaded', bindButton);
 
 function createTable(data)
@@ -96,7 +96,7 @@ function deleteRow(id)
 		if(req.status >= 200 && req.status < 400)
 		{
 			deleteTable(); 
-			callSelect(); 
+			selectTable(); 
 		}
 
 		else 
@@ -201,10 +201,10 @@ function deleteTable()
 	table.parentNode.removeChild(table); 
 }
 
-function callSelect()
+function selectTable()
 {
 	var req = new XMLHttpRequest();
-	var url = "http://52.35.2.29:3000/select";
+	var url = "http://52.35.2.29:3000/all";
 
 	req.open('GET', url, true);
 	req.setRequestHeader('Content-Type', 'application/json');
@@ -236,11 +236,11 @@ function bindButton()
 
 	    if(radioButton[0].checked) 
 	    {
-	    	dataInput.measure = "1";
+	    	dataInput.measure = 1;
 	    }
 	    else
 	    {
-	        dataInput.measure = "0";
+	        dataInput.measure = 0;
 	    }
 
 		var req = new XMLHttpRequest();
@@ -252,7 +252,7 @@ function bindButton()
 		req.addEventListener('load',function()
 		{
 			deleteTable(); 
-			callSelect(); 
+			selectTable(); 
 		});
 		req.send(); 
 		event.preventDefault(); 
@@ -271,11 +271,11 @@ function updateTable(id)
 
     if(radio[0].checked)
     {
-    	dataInput.measure = "1";
+    	dataInput.measure = 1;
     }
     else
     {
-    	dataInput.measure = "0";
+    	dataInput.measure = 0;
     }
 
 	var req = new XMLHttpRequest();
@@ -287,7 +287,7 @@ function updateTable(id)
 	req.addEventListener('load',function()
 	{
 		deleteTable(); 
-		callSelect(); 
+		selectTable(); 
 		document.body.removeChild(document.getElementById("newForm" + id));
 	});
 	req.send(null); 
