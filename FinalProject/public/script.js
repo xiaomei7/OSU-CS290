@@ -166,7 +166,7 @@ function editRow(id)
 	updateSubmitButton.appendChild(theText);
 	updateSubmitButton.addEventListener("click", function (event)
 	{
-		updateGET(id);
+		updateTable(id);
 		event.preventDefault();
 	}); 
 	fieldset.appendChild(updateSubmitButton);
@@ -174,7 +174,7 @@ function editRow(id)
 
 	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
-	document.body.insertAfter(newForm, table);
+	document.body.insertBefore(newForm, table);
 
 }
 
@@ -236,7 +236,7 @@ function bindButton()
 	});
 };
 
-function updateGET(id)
+function updateTable(id)
 {
 	var dataInput = {};
 	dataInput.id = id;
@@ -267,7 +267,7 @@ function updateGET(id)
 		callSelect(); 
 		document.body.removeChild(document.getElementById("newForm" + id));
 	});
-	req.send(); 
+	req.send(null); 
 	event.preventDefault(); 
 
 };
