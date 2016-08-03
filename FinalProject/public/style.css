@@ -1,5 +1,9 @@
-#newName, #newReps, #newWeight {
+#newName, #newReps {
 	margin-right: 20px;
+}
+
+#newDate {
+	margin-left: 20px;
 }
 
 table {
