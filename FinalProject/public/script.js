@@ -124,7 +124,7 @@ function editRow(id)
 	newForm.appendChild(heading);
 
 	var fieldset = document.createElement("fieldset");
-	fieldset.setAttribute("class", "updateForm");
+	//fieldset.setAttribute("class", "updateForm");
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update your exercise:");
 
