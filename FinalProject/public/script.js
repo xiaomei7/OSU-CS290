@@ -156,7 +156,7 @@ function editRow(id)
 	fieldset.appendChild(unitsLBS);
 	fieldset.appendChild(document.createTextNode("lbs"));
 	fieldset.appendChild(unitsKilos);
-	fieldset.appendChild(document.createTextNode("kilos"));	
+	fieldset.appendChild(document.createTextNode("kgs"));	
 
 	
 	updateSubmitButton = document.createElement("button");
@@ -207,21 +207,21 @@ function bindButton()
 		dataInput.reps = document.getElementById("reps").value;
 		dataInput.weight = document.getElementById("weight").value;
 		dataInput.date = document.getElementById("date").value;
-		var radio = document.getElementsByName("measure");
+		var radioButton = document.getElementsByName("measure");
 
-	    if(radio[0].checked) 
+	    if(radioButton[0].checked) 
 	    {
-	    		dataInput.measure = "1";
+	    	dataInput.measure = 1;
 	    }
 	    else
 	    {
-	        dataInput.measure = "0";
+	        dataInput.measure = 0;
 	    }
 
 		var req = new XMLHttpRequest();
 		var url= "http://52.35.2.29:3000/insert?name=" 
 		+ dataInput.name + "&reps=" + dataInput.reps + "&weight=" 
-		+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.units;
+		+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.measure;
 		
 		req.open('GET', url, true);
 		req.addEventListener('load',function()
@@ -246,17 +246,17 @@ function updateGET(id)
 
     if(radio[0].checked)
     {
-    	dataInput.units = "1";
+    	dataInput.measure = 1;
     }
     else
     {
-    	dataInput.units = "0";
+    	dataInput.measure = 0;
     }
 
 	var req = new XMLHttpRequest();
 	var url= "http://52.35.2.29:3000/update?id=" + dataInput.id 
 	+ "&name=" + dataInput.name + "&reps=" + dataInput.reps + "&weight=" 
-	+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.units;
+	+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.measure;
 		
 	req.open('GET', url , true);
 	req.addEventListener('load',function()
