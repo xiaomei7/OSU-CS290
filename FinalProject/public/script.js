@@ -118,7 +118,7 @@ function editRow(id)
 	newForm.setAttribute("id", "newForm" + id); 
 	
 	var heading = document.createElement('h3'); // Heading of Form
-	heading.innerHTML = "Update your exercise: ";
+	heading.innerHTML = "Update Form: ";
 	newForm.appendChild(heading);
 
 	var fieldset = document.createElement("fieldset");
