@@ -126,9 +126,7 @@ function editRow(id)
 	name.setAttribute('id','newName');
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
-	document.write("<br>");
 
-	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
 	reps.setAttribute('id','newReps');
@@ -140,6 +138,20 @@ function editRow(id)
 	weight.setAttribute('id','newWeight');
 	fieldset.appendChild(document.createTextNode("Weight")); 
 	fieldset.appendChild(weight);
+
+	var measureLbs = document.createElement("input");
+	measureLbs.setAttribute('type','radio');
+	measureLbs.setAttribute('name','newMeasure');
+
+	var measureKgs = document.createElement("input");
+	measureKgs.setAttribute('type','radio');
+	measureKgs.setAttribute('name','newMeasure');
+
+	//fieldset.appendChild(document.createTextNode("Units")); 
+	fieldset.appendChild(measureLbs);
+	fieldset.appendChild(document.createTextNode("lbs"));
+	fieldset.appendChild(measureKgs);
+	fieldset.appendChild(document.createTextNode("kgs"));
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
@@ -147,30 +159,16 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 	
-	var unitsLBS = document.createElement("input");
-	unitsLBS.setAttribute('type','radio');
-	unitsLBS.setAttribute('name','newMeasure');
-
-	var unitsKilos = document.createElement("input");
-	unitsKilos.setAttribute('type','radio');
-	unitsKilos.setAttribute('name','newMeasure');
-
-	fieldset.appendChild(document.createTextNode("Units")); 
-	fieldset.appendChild(unitsLBS);
-	fieldset.appendChild(document.createTextNode("lbs"));
-	fieldset.appendChild(unitsKilos);
-	fieldset.appendChild(document.createTextNode("kgs"));	
-
 	
-	updateSubmitButton = document.createElement("button");
+	updateButton = document.createElement("button");
 	theText = document.createTextNode("update");
-	updateSubmitButton.appendChild(theText);
-	updateSubmitButton.addEventListener("click", function (event)
+	updateButton.appendChild(theText);
+	updateButton.addEventListener("click", function (event)
 	{
 		updateTable(id);
 		event.preventDefault();
 	}); 
-	fieldset.appendChild(updateSubmitButton);
+	fieldset.appendChild(updateButton);
 
 
 	newForm.appendChild(fieldset); 
