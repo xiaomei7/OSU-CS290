@@ -13,10 +13,9 @@ h1, h2, h3, p{
 	font-color: grey;
 }
 
-button {
+.add {
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	text-align: center;
 	font-color: grey;
 	position: absolute;
-    top: 50%;
 }
