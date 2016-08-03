@@ -78,7 +78,10 @@ function createTable(data)
 		newRow.appendChild(editButton);
 		
 		newBody.appendChild(newRow);
+
 	}
+
+	newTable.setAttribute("align", "center");
 }
 
 
