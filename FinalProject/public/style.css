@@ -18,3 +18,9 @@ h1, h2, h3, p{
     margin: 1.0em auto;
     text-align: center;
 }
+
+table {
+	margin-top:40px;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
