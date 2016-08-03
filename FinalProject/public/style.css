@@ -10,7 +10,7 @@ h1, h2, h3, p{
 	margin-top:40px;
 	text-align: center;
 	font-family: "Comic Sans MS", cursive, sans-serif;
-	color: #bfbfbf;
+	color: #999999;
 }
 
 .align-center {
@@ -26,14 +26,14 @@ table {
 }
 
 fieldset { 
-	border:1px #ccffff 
+	border:1px #66b3ff 
 }
 
 legend {
 
   padding: 0.2em 0.5em;
-  border:1px #ccffff;
-  color: #999999;
+  border:1px #66b3ff;
+  color: blue;
   font-size:90%;
   text-align: left;
 }
