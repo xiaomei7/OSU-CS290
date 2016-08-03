@@ -1,3 +1,7 @@
-td, tr, th {
+table {
 	border: solid black;
+}
+
+td, tr, th {
+	border: dashed grey;
 }
