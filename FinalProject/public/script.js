@@ -81,7 +81,7 @@ function createTable(data)
 
 	}
 
-	//newTable.setAttribute("align", "center");
+	newTable.setAttribute("align", "center");
 }
 
 
