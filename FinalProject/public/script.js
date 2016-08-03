@@ -107,26 +107,26 @@ function bindButton()
 	document.getElementById('addExercise').addEventListener("click", function(event)
 	{
 		
-		var payload = {}; 
-		payload.name = document.getElementById("name").value;
-		payload.reps = document.getElementById("reps").value;
-		payload.weight = document.getElementById("weight").value;
-		payload.date = document.getElementById("date").value;
+		var dataInput = {}; 
+		dataInput.name = document.getElementById("name").value;
+		dataInput.reps = document.getElementById("reps").value;
+		dataInput.weight = document.getElementById("weight").value;
+		dataInput.date = document.getElementById("date").value;
 		var radio = document.getElementsByName("measure");
 
 	    if(radio[0].checked) 
 	    {
-	    		payload.measure = "1";
+	    		dataInput.measure = "1";
 	    }
 	    else
 	    {
-	        payload.measure = "0";
+	        dataInput.measure = "0";
 	    }
 
 		var req = new XMLHttpRequest();
 		var url= "http://52.35.2.29:3000/insert?name=" 
-		+ payload.name + "&reps=" + payload.reps + "&weight=" 
-		+ payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
+		+ dataInput.name + "&reps=" + dataInput.reps + "&weight=" 
+		+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.units;
 		
 		req.open('GET', url, true);
 		req.addEventListener('load',function()
@@ -141,32 +141,31 @@ function bindButton()
 
 function updateGET(id)
 {
-	var payload = {};
-	payload.id = id;
-	payload.name = document.getElementById("newName").value;
-	payload.reps = document.getElementById("newReps").value;
-	payload.weight = document.getElementById("newWeight").value;
-	payload.date = document.getElementById("newDate").value;
+	var dataInput = {};
+	dataInput.id = id;
+	dataInput.name = document.getElementById("newName").value;
+	dataInput.reps = document.getElementById("newReps").value;
+	dataInput.weight = document.getElementById("newWeight").value;
+	dataInput.date = document.getElementById("newDate").value;
 	var radio = document.getElementsByName("newMeasure");
 
     if(radio[0].checked)
     {
-    	payload.units = "1";
+    	dataInput.units = "1";
     }
     else
     {
-    	payload.units = "0";
+    	dataInput.units = "0";
     }
 
 	var req = new XMLHttpRequest();
-	var requestString= "id=" + payload.id + "&name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
-	
-	console.log("requestString: " + requestString)	
-	
-	req.open('GET', "http://52.35.2.29:3000/update?" + requestString , true);
+	var url= "http://52.35.2.29:3000/update?id=" + dataInput.id 
+	+ "&name=" + dataInput.name + "&reps=" + dataInput.reps + "&weight=" 
+	+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.units;
+		
+	req.open('GET', url , true);
 	req.addEventListener('load',function()
 	{
-		
 		deleteTable(); 
 		callSelect(); 
 		document.body.removeChild(document.getElementById("newForm" + id));
