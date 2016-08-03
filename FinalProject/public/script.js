@@ -81,22 +81,6 @@ function createTable(data)
 	}
 }
 
-function deleteButton(id)
-{
-	var req = new XMLHttpRequest();
-
-	req.open('GET', "http://52.35.2.29:3000/delete?id=" + id , true);
-	req.addEventListener('load',function()
-	{
-		deleteTable(); 
-		callSelect(); //create new table
-	});
-	req.send(); //Send the content
-	event.preventDefault(); 
-}
-
-
-
 
 function deleteTable()
 {
