@@ -120,7 +120,7 @@ function editRow(id)
 
 	
 	var heading = document.createElement('h3'); // Heading of Form
-	heading.innerHTML = "Update Form: ";
+	heading.innerHTML = "Update Your Entry: ";
 	newForm.appendChild(heading);
 
 	var fieldset = document.createElement("fieldset");
