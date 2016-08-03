@@ -6,7 +6,7 @@ button {
 	border: 1px solid grey;
 }
 
-h1{
+h1, h2, h3{
 	margin-top:40px;
-	font-family:'Ubuntu',sans-serif;
+	font-family: 'Cursive', 'Ubuntu',sans-serif;
 }
