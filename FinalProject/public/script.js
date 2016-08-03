@@ -48,37 +48,132 @@ function createTable(data)
 		}
 
 		// Delete
-		var newButton = document.createElement("button");
-		var buttonText = document.createTextNode("delete");
-		newButton.appendChild(buttonText);
+		var deleteButton = document.createElement("button");
+		var deleteText = document.createTextNode("delete");
+		deleteButton.appendChild(deleteText);
 
-		newButton.id = newRow.firstChild.textContent;
-		newButton.onclick = function(x)
+		deleteButton.id = newRow.firstChild.textContent;
+		deleteButton.onclick = function(x)
 		{
 			return function()
 			{
-				deleteButton(x);
+				deleteRow(x);
 			};
-		}(newButton.id);  
-		newRow.appendChild(newButton);
+		}(deleteButton.id);  
+		newRow.appendChild(deleteButton);
 		
 		// Edit
-		var upButton = document.createElement("button");
+		var editButton = document.createElement("button");
 		var upText = document.createTextNode("edit");
-		upButton.appendChild(upText);
+		editButton.appendChild(upText);
 
-		upButton.id = newRow.firstChild.textContent;
-		upButton.onclick = function(x)
+		editButton.id = newRow.firstChild.textContent;
+		editButton.onclick = function(x)
 		{
 			return function()
 			{
-				editButton(x);
+				editRow(x);
 			};
-		}(upButton.id); 
-		newRow.appendChild(upButton);
+		}(editButton.id); 
+		newRow.appendChild(editButton);
 		
 		newBody.appendChild(newRow);
 	}
+}
+
+
+function deleteRow(id)
+{
+	var req = new XMLHttpRequest();
+	var url = "http://52.35.2.29:3000/delete?id=" + id;
+	req.open('GET', url, true);
+
+	req.addEventListener('load',function()
+	{
+		if(req.status >= 200 && req.status < 400)
+		{
+			deleteTable(); 
+			callSelect(); 
+		}
+
+		else 
+		{
+			console.log("Error in network request: " + request.statusText);
+		}
+
+	});
+
+	req.send(null); 
+	event.preventDefault(); 
+};
+
+function editRow(id)
+{
+	
+	var newForm = document.createElement("form"); 
+	newForm.setAttribute("id", "newForm" + id); 
+	
+	
+	var fieldset = document.createElement("fieldset");
+	var legend = document.createElement("legend");
+	var legendText = document.createTextNode("Update your exercise:");
+
+	legend.appendChild(legendText);
+	fieldset.appendChild(legend);
+	
+	var name = document.createElement("input");
+	name.setAttribute('type','text');
+	name.setAttribute('id','newName');
+	fieldset.appendChild(document.createTextNode("Name"));
+	fieldset.appendChild(name);
+
+	
+	var reps = document.createElement("input");
+	reps.setAttribute('type','text');
+	reps.setAttribute('id','newReps');
+	fieldset.appendChild(document.createTextNode("Reps")); 
+	fieldset.appendChild(reps);
+	
+	var weight = document.createElement("input");
+	weight.setAttribute('type','text');
+	weight.setAttribute('id','newWeight');
+	fieldset.appendChild(document.createTextNode("Weight")); 
+	fieldset.appendChild(weight);
+	
+	var date = document.createElement("input");
+	date.setAttribute('type','text');
+	date.setAttribute('id','newDate'); //punny
+	fieldset.appendChild(document.createTextNode("Date")); 
+	fieldset.appendChild(date);
+	
+	var unitsLBS = document.createElement("input");
+	unitsLBS.setAttribute('type','radio');
+	unitsLBS.setAttribute('name','newMeasure');
+	var unitsKilos = document.createElement("input");
+	unitsKilos.setAttribute('type','radio');
+	unitsKilos.setAttribute('name','newMeasure');
+	fieldset.appendChild(document.createTextNode("Units")); 
+	fieldset.appendChild(unitsLBS);
+	fieldset.appendChild(document.createTextNode("lbs"));
+	fieldset.appendChild(unitsKilos);
+	fieldset.appendChild(document.createTextNode("kilos"));	
+
+	
+	updateSubmitButton = document.createElement("button");
+	theText = document.createTextNode("update");
+	updateSubmitButton.appendChild(theText);
+	updateSubmitButton.addEventListener("click", function (event)
+	{
+		updateGET(id);
+		event.preventDefault();
+	}); 
+	fieldset.appendChild(updateSubmitButton);
+
+
+	newForm.appendChild(fieldset); 
+	var table = document.getElementById("tableID"); 
+	document.body.insertBefore(newForm, table);
+	
 }
 
 
