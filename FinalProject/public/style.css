@@ -5,29 +5,30 @@ table {
 button {
 	border: 1px solid grey;
 	text-align: center;
-	background: #a3bdcf;
-  background-image: -webkit-linear-gradient(top, #a3bdcf, #234052);
-  background-image: -moz-linear-gradient(top, #a3bdcf, #234052);
-  background-image: -ms-linear-gradient(top, #a3bdcf, #234052);
-  background-image: -o-linear-gradient(top, #a3bdcf, #234052);
-  background-image: linear-gradient(to bottom, #a3bdcf, #234052);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
+
+  background: #a3bdcf;
+  background-image: -webkit-linear-gradient(top, #a3bdcf, #252829);
+  background-image: -moz-linear-gradient(top, #a3bdcf, #252829);
+  background-image: -ms-linear-gradient(top, #a3bdcf, #252829);
+  background-image: -o-linear-gradient(top, #a3bdcf, #252829);
+  background-image: linear-gradient(to bottom, #a3bdcf, #252829);
+  -webkit-border-radius: 32;
+  -moz-border-radius: 32;
+  border-radius: 32px;
   font-family: Courier New;
   color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+  padding: 4px 12px 4px 11px;
   text-decoration: none;
 }
 
 button:hover {
-  background: #1d3747;
-  background-image: -webkit-linear-gradient(top, #1d3747, #3498db);
-  background-image: -moz-linear-gradient(top, #1d3747, #3498db);
-  background-image: -ms-linear-gradient(top, #1d3747, #3498db);
-  background-image: -o-linear-gradient(top, #1d3747, #3498db);
-  background-image: linear-gradient(to bottom, #1d3747, #3498db);
+  background: #c3cfd6;
+  background-image: -webkit-linear-gradient(top, #c3cfd6, #000000);
+  background-image: -moz-linear-gradient(top, #c3cfd6, #000000);
+  background-image: -ms-linear-gradient(top, #c3cfd6, #000000);
+  background-image: -o-linear-gradient(top, #c3cfd6, #000000);
+  background-image: linear-gradient(to bottom, #c3cfd6, #000000);
   text-decoration: none;
 }
 
