@@ -6,7 +6,8 @@ button {
 	border: 1px solid grey;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p{
 	margin-top:40px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+	align-items: center;
 }
