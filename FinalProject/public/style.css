@@ -15,7 +15,6 @@ h1, h2, h3, p{
 
 .add {
 	font-family: "Comic Sans MS", cursive, sans-serif;
-	text-align: center;
-	font-color: grey;
-	position: absolute;
+	margin:auto;
+  	display:block;
 }
