@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
-document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
+document.addEventListener('DOMContentLoaded', callSelect);
+document.addEventListener('DOMContentLoaded', bindInsertButton);
 
 function createTable(data)
 {
@@ -98,44 +98,40 @@ function deleteButton(id)
 
 function updateButton(id)
 {
-	//Create form and set attributes*******************************
-	var upForm = document.createElement("form"); //create form element
-	upForm.setAttribute("id", "upForm" + id); //Give the form the same ID as the data we are changing
 	
-	//***********************************************************
+	var upForm = document.createElement("form"); 
+	upForm.setAttribute("id", "upForm" + id); 
 	
-	//Create fieldset + label**********************************
+	
 	var fieldset = document.createElement("fieldset");
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update the workout");
 	legend.appendChild(legendText);
 	fieldset.appendChild(legend);
-	//********************************************************
 	
-	//Below are the input text boxes of the form**************
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
 	name.setAttribute('id','upName');
-	fieldset.appendChild(document.createTextNode("Name")); //Label the text box
+	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
 
 	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
 	reps.setAttribute('id','upReps');
-	fieldset.appendChild(document.createTextNode("Reps")); //Label the text box
+	fieldset.appendChild(document.createTextNode("Reps")); 
 	fieldset.appendChild(reps);
 	
 	var weight = document.createElement("input");
 	weight.setAttribute('type','text');
 	weight.setAttribute('id','upWeight');
-	fieldset.appendChild(document.createTextNode("Weight")); //Label the text box
+	fieldset.appendChild(document.createTextNode("Weight")); 
 	fieldset.appendChild(weight);
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
 	date.setAttribute('id','upDate'); //punny
-	fieldset.appendChild(document.createTextNode("Date")); //Label the text box
+	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 	
 	var unitsLBS = document.createElement("input");
@@ -144,12 +140,11 @@ function updateButton(id)
 	var unitsKilos = document.createElement("input");
 	unitsKilos.setAttribute('type','radio');
 	unitsKilos.setAttribute('name','upUnits');
-	fieldset.appendChild(document.createTextNode("Units")); //Label the radio buttons
+	fieldset.appendChild(document.createTextNode("Units")); 
 	fieldset.appendChild(unitsLBS);
 	fieldset.appendChild(document.createTextNode("lbs"));
 	fieldset.appendChild(unitsKilos);
 	fieldset.appendChild(document.createTextNode("kilos"));	
-	//*******************************************************
 
 	//Create submit button************************************
 	updateSubmitButton = document.createElement("BUTTON");
@@ -162,11 +157,9 @@ function updateButton(id)
 	fieldset.appendChild(updateSubmitButton);
 	//*******************************************************
 
-	upForm.appendChild(fieldset); //append the fieldset to the form	
-	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
+	upForm.appendChild(fieldset); 
+	var table = document.getElementById("tableID"); 
 	document.body.insertBefore(upForm, table);
-
-	
 	
 }
 
@@ -194,7 +187,8 @@ function callSelect()
 function bindInsertButton(){
 	
 	//Listener for the insert button
-	document.getElementById('insertSubmit').addEventListener("click", function(event){
+	document.getElementById('addExercise').addEventListener("click", function(event)
+	{
 		
 		var payload = {}; //payload is the object I will use to send data to the insert page via get request
 		payload.name = document.getElementById("name").value;
@@ -220,7 +214,8 @@ function bindInsertButton(){
 	});
 };
 
-function updateGET(id){
+function updateGET(id)
+{
 	var payload = {}; //payload is the object I will use to send data to the insert page via get request
 	payload.id = id;
 	payload.name = document.getElementById("upName").value;
