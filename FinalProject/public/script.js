@@ -172,7 +172,7 @@ function editRow(id)
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
 	date.setAttribute('id','newDate'); 
-	dateText = document.createTextNode("Date ");
+	dateText = document.createTextNode("    Date ");
 	fieldset.appendChild(dateText); 
 	fieldset.appendChild(date);
 
