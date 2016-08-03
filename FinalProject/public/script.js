@@ -254,7 +254,7 @@ function updateGET(id)
     }
 
 	var req = new XMLHttpRequest();
-	var url= "http://52.35.2.29:3000/update?id=" + dataInput.id 
+	var url= "http://52.35.2.29:3000/edit?id=" + dataInput.id 
 	+ "&name=" + dataInput.name + "&reps=" + dataInput.reps + "&weight=" 
 	+ dataInput.weight + "&date=" + dataInput.date + "&lbs=" + dataInput.measure;
 		
