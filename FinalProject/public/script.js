@@ -124,7 +124,7 @@ function editRow(id)
 	newForm.appendChild(heading);
 
 	var fieldset = document.createElement("fieldset");
-	//fieldset.setAttribute("class", "updateForm");
+	fieldset.setAttribute("class", "updateForm");
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update your exercise:");
 
@@ -172,6 +172,10 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 
+	var line = document.createElement('hr'); // Giving Horizontal Row After Heading
+	fieldset.appendChild(line);
+
+
 	updateButton = document.createElement("button");
 	buttonName = document.createTextNode("update");
 	updateButton.appendChild(buttonName);
@@ -180,6 +184,9 @@ function editRow(id)
 		updateTable(id);
 		event.preventDefault();
 	}); 
+	fieldset.appendChild(updateButton);
+
+	
 
 	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
