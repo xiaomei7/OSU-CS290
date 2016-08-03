@@ -115,10 +115,9 @@ function deleteRow(id)
 function editRow(id)
 {
 
-	var linebreak = document.createElement("br");
-
 	var newForm = document.createElement("form"); 
-	newForm.setAttribute("id", "newForm" + id); 
+	newForm.setAttribute("id", "newForm" + id);
+	newFrom.setAttribute("class", "updateForm");
 	
 	var heading = document.createElement('h3'); // Heading of Form
 	heading.innerHTML = "Update Form: ";
@@ -128,7 +127,6 @@ function editRow(id)
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update your exercise:");
 
-	
 
 	legend.appendChild(legendText);
 	fieldset.appendChild(legend);
@@ -139,7 +137,6 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
 
-	fieldset.appendChild(linebreak);
 
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
@@ -147,7 +144,6 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Reps")); 
 	fieldset.appendChild(reps);
 
-	fieldset.appendChild(linebreak);
 	
 	var weight = document.createElement("input");
 	weight.setAttribute('type','text');
@@ -168,7 +164,6 @@ function editRow(id)
 	fieldset.appendChild(measureKgs);
 	fieldset.appendChild(document.createTextNode("kgs "));
 
-	fieldset.appendChild(linebreak);
 	
 	var date = document.createElement("input");
 	date.setAttribute('type','text');
@@ -176,7 +171,6 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 
-	fieldset.appendChild(linebreak);
 	
 	updateButton = document.createElement("button");
 	theText = document.createTextNode("update");
@@ -186,8 +180,6 @@ function editRow(id)
 		updateTable(id);
 		event.preventDefault();
 	}); 
-	fieldset.appendChild(updateButton);
-
 
 	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 

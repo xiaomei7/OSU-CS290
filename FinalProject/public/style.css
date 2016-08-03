@@ -1,5 +1,5 @@
 table {
-	border: solid grey;
+	border: 1px solid grey;
 }
 
 button {
@@ -30,10 +30,15 @@ fieldset {
 }
 
 legend {
-
   padding: 0.2em 0.5em;
   border:1px solid grey;
   color: grey;
   font-size:90%;
   text-align: left;
+}
+
+.updateForm {
+	display: block;
+    margin: 1.0em auto;
+    text-align: center;
 }
