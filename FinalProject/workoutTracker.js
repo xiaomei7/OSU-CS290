@@ -8,15 +8,17 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({secret:'SuperSecretPassword'}));
+app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
-app.get('/', function(req,res){
-    res.render('home');
-});
 
+app.get('/', function(req,res){
+  var context = {};
+  res.render('home', context);
+});
 
 
 app.get('/reset-table',function(req,res,next){
