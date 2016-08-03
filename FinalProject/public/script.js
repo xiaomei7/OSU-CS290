@@ -118,7 +118,6 @@ function editRow(id)
 	var newForm = document.createElement("form"); 
 	newForm.setAttribute("id", "newForm" + id);
 
-	
 	var heading = document.createElement('h3'); // Heading of Form
 	heading.innerHTML = "Update Your Entry: ";
 	newForm.appendChild(heading);

@@ -1,10 +1,7 @@
-#newName, #newReps {
+#newName, #newReps, #newMeasure{
 	margin-right: 20px;
 }
 
-#newDate {
-	margin-left: 20px;
-}
 
 table {
 	border: 1px solid grey;
