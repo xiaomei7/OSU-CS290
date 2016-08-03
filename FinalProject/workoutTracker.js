@@ -20,17 +20,6 @@ app.get('/',function(req,res,next){
   res.render('home', context);
 });
 
-app.get('/all',function(req,res,next){
-  pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-    res.send(JSON.stringify(rows));
-  });
-});
-
-
 app.get('/insert',function(req,res,next){
   var context = {};
   pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
@@ -90,6 +79,16 @@ app.get('/delete',function(req,res,next){
         res.render('home',context);
       });
     }
+  });
+});
+
+app.get('/all',function(req,res,next){
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    res.send(JSON.stringify(rows));
   });
 });
 

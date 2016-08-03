@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', selectTable);
 document.addEventListener('DOMContentLoaded', bindButton);
+document.addEventListener('DOMContentLoaded', selectTable);
 
 function createTable(data)
 {
@@ -147,20 +147,20 @@ function editRow(id)
 
 	
 	var weight = document.createElement("input");
-	weight.setAttribute('type','text');
-	weight.setAttribute('id','newWeight');
+	weight.setAttribute("type", "text");
+	weight.setAttribute("id", "newWeight");
 	weightText = document.createTextNode("Weight ");
 	fieldset.appendChild(weightText); 
 	fieldset.appendChild(weight);
 
 	var measureLbs = document.createElement("input");
-	measureLbs.setAttribute('type','radio');
-	measureLbs.setAttribute('name','newMeasure');
+	measureLbs.setAttribute("type", "radio");
+	measureLbs.setAttribute("name", "newMeasure");
 	measreLbsText = document.createTextNode("lbs");
 
 	var measureKgs = document.createElement("input");
-	measureKgs.setAttribute('type','radio');
-	measureKgs.setAttribute('name','newMeasure');
+	measureKgs.setAttribute("type", "radio");
+	measureKgs.setAttribute("name", "newMeasure");
 	measureKgsText = document.createTextNode("kgs  ");
 
 	fieldset.appendChild(measureLbs);
@@ -170,8 +170,8 @@ function editRow(id)
 
 	
 	var date = document.createElement("input");
-	date.setAttribute('type','text');
-	date.setAttribute('id','newDate'); 
+	date.setAttribute("type", "text");
+	date.setAttribute("id", "newDate"); 
 	dateText = document.createTextNode("    Date ");
 	fieldset.appendChild(dateText); 
 	fieldset.appendChild(date);
@@ -240,11 +240,11 @@ function bindButton()
 
 	    if(radioButton[0].checked) 
 	    {
-	    	dataInput.measure = 1;
+	    	dataInput.measure = "1";
 	    }
 	    else
 	    {
-	        dataInput.measure = 0;
+	        dataInput.measure = "0";
 	    }
 
 		var req = new XMLHttpRequest();
@@ -258,7 +258,8 @@ function bindButton()
 			deleteTable(); 
 			selectTable(); 
 		});
-		req.send(); 
+
+		req.send(null); 
 		event.preventDefault(); 
 	});
 };
@@ -275,11 +276,11 @@ function updateTable(id)
 
     if(radio[0].checked)
     {
-    	dataInput.measure = 1;
+    	dataInput.measure = "1";
     }
     else
     {
-    	dataInput.measure = 0;
+    	dataInput.measure = "0";
     }
 
 	var req = new XMLHttpRequest();
@@ -294,6 +295,7 @@ function updateTable(id)
 		selectTable(); 
 		document.body.removeChild(document.getElementById("newForm" + id));
 	});
+
 	req.send(null); 
 	event.preventDefault(); 
 
