@@ -112,7 +112,7 @@ function deleteRow(id)
 function editRow(id)
 {
 
-	var linebreak = document.createElement("/br");
+	var linebreak = document.createElement("br");
 
 	var newForm = document.createElement("form"); 
 	newForm.setAttribute("id", "newForm" + id); 
@@ -133,10 +133,11 @@ function editRow(id)
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
 	name.setAttribute('id','newName');
-	fieldset.appendChild(document.createTextNode("Name"));
-	fieldset.appendChild(name);
+	/*fieldset.appendChild(document.createTextNode("Name"));
+	fieldset.appendChild(name);*/
+	newForm.appendChild(name);
 
-	newForm.appendChild(nameBreak);
+	newForm.appendChild(linebreak);
 
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
@@ -186,7 +187,7 @@ function editRow(id)
 	fieldset.appendChild(updateButton);
 
 
-	newForm.appendChild(fieldset); 
+	//newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
 	document.body.insertBefore(newForm, table);
 
