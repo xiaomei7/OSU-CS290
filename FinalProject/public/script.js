@@ -173,8 +173,8 @@ function editRow(id)
 	newForm.appendChild(fieldset); 
 	var table = document.getElementById("tableID"); 
 	//document.body.insertBefore(newForm, table);
-	//document.body.appendChild("</br></br>");
-	document.body.appendChild(table);
+	document.body.appendChild("</br></br>");
+	document.body.appendChild(newForm);
 	
 }
 
