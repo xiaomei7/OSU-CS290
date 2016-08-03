@@ -184,40 +184,37 @@ function callSelect()
 	req.send(); 
 }
 
-//calls to the input page and inserts data
-function bindInsertButton(){
-	
-	//Listener for the insert button
+function bindInsertButton()
+{
 	document.getElementById('addExercise').addEventListener("click", function(event)
 	{
 		
-		var payload = {}; //payload is the object I will use to send data to the insert page via get request
+		var payload = {}; 
 		payload.name = document.getElementById("name").value;
 		payload.reps = document.getElementById("reps").value;
 		payload.weight = document.getElementById("weight").value;
 		payload.date = document.getElementById("date").value;
-		var radio = document.getElementsByName("units");
-	        if(radio[0].checked) payload.units = "1";
-	        else payload.units = "0";
+		var radio = document.getElementsByName("measure");
+	        if(radio[0].checked) payload.measure = "1";
+	        else payload.measure = "0";
 
-		//make request to insert page 
 		var req = new XMLHttpRequest();
 		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 		
 		req.open('GET', "http://52.35.2.29:3000/insert?" + requestString , true);
-		req.addEventListener('load',function(){
-			//delete table and then insert new table
-			deleteTable(); //delete old table
-			callSelect(); //create new table
+		req.addEventListener('load',function()
+		{
+			deleteTable(); 
+			callSelect(); 
 		});
-		req.send(); //Send the content
-		event.preventDefault(); //Stop page from refreshing
+		req.send(); 
+		event.preventDefault(); 
 	});
 };
 
 function updateGET(id)
 {
-	var payload = {}; //payload is the object I will use to send data to the insert page via get request
+	var payload = {};
 	payload.id = id;
 	payload.name = document.getElementById("upName").value;
 	payload.reps = document.getElementById("upReps").value;
@@ -227,20 +224,20 @@ function updateGET(id)
         if(radio[0].checked) payload.units = "1";
         else payload.units = "0";
 
-	//make request to insert page 
 	var req = new XMLHttpRequest();
 	var requestString= "id=" + payload.id + "&name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 	
-/*debug*/ console.log("requestString: " + requestString)	
+	console.log("requestString: " + requestString)	
 	
 	req.open('GET', "http://52.35.2.29:3000/update?" + requestString , true);
-	req.addEventListener('load',function(){
-		//delete table and then insert new table
-		deleteTable(); //delete old table
-		callSelect(); //create new table
+	req.addEventListener('load',function()
+	{
+		
+		deleteTable(); 
+		callSelect(); 
 		document.body.removeChild(document.getElementById("upForm" + id));
 	});
-	req.send(); //Send the content
-	event.preventDefault(); //Stop page from refreshing
+	req.send(); 
+	event.preventDefault(); 
 
 };
