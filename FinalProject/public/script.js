@@ -127,7 +127,7 @@ function editRow(id)
 	name.setAttribute('id','newName');
 	fieldset.appendChild(document.createTextNode("Name"));
 	fieldset.appendChild(name);
-	fieldset.appendChild(linebreak);
+	name.appendChild(linebreak);
 
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
@@ -162,6 +162,7 @@ function editRow(id)
 	date.setAttribute('id','newDate'); 
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
+	fieldset.appendChild(linebreak);
 	fieldset.appendChild(linebreak);
 	
 	
