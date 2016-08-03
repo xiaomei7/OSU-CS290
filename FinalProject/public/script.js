@@ -172,10 +172,9 @@ function editRow(id)
 	fieldset.appendChild(document.createTextNode("Date")); 
 	fieldset.appendChild(date);
 
-	
 	updateButton = document.createElement("button");
-	theText = document.createTextNode("update");
-	updateButton.appendChild(theText);
+	buttonName = document.createTextNode("update");
+	updateButton.appendChild(buttonName);
 	updateButton.addEventListener("click", function (event)
 	{
 		updateTable(id);
@@ -221,6 +220,12 @@ function bindButton()
 		dataInput.weight = document.getElementById("weight").value;
 		dataInput.date = document.getElementById("date").value;
 		var radioButton = document.getElementsByName("measure");
+
+		if (dataInput.name == "") 
+		{
+            alert("Please entert the name!");
+            return;
+        }
 
 	    if(radioButton[0].checked) 
 	    {
